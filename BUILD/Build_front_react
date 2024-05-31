@@ -1,0 +1,6 @@
+from node:20.14.0
+WORKDIR /app
+COPY ./front_react .
+RUN npm install
+RUN npm run build
+CMD npm run preview
