@@ -1,0 +1,5 @@
+from golang:1.22
+WORKDIR /app
+COPY ./go_back .
+RUN go mod tidy
+CMD go run ./cmd
