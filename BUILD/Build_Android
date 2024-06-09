@@ -1,0 +1,7 @@
+FROM anandbose16/android-sdk:34.0.0
+
+# Копирование исходных файлов проекта в контейнер
+WORKDIR /app
+COPY ./Android .
+# Сборка проекта
+RUN gradle assembleDebug
