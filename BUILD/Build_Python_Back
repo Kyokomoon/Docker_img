@@ -1,5 +1,5 @@
 from python:3.9
 WORKDIR /app
-COPY ./Python_backend/last_version/radius_test.py .
+COPY ./Python_backend/Main_folder/main.py .
 RUN pip install matplotlib numpy
 CMD ["python","radius_test.py"]
