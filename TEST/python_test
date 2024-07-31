@@ -2,4 +2,4 @@ from python:3.9
 WORKDIR /app
 COPY ./Python_backend .
 RUN pip install matplotlib numpy
-RUN python3 -m unittest discover -s /Python_backend/Main_folder/test
+RUN python3 -m unittest discover -s test
