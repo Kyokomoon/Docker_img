@@ -1,5 +1,7 @@
-from python:3.9
+from ubuntu:latest
 WORKDIR /app
 COPY ./Python_backend .
-RUN pip install matplotlib numpy
+RUN apt-get update && apt-get install -y python3
+RUN apt-get install -y python3-matplotlib
+RUN apt-get install -y python3-numpy
 RUN python3 -m unittest discover -s test
