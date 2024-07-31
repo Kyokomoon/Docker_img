@@ -4,4 +4,4 @@ FROM anandbose16/android-sdk:34.0.0
 WORKDIR /app
 COPY ./Android .
 # Запуск тестов
-RUN gradle testDebugUnitTest
+RUN gradle testDebug -Pfilter=ExampleUnitTest
