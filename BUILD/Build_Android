@@ -1,7 +1,17 @@
 FROM mobiledevops/android-sdk-image:34.0.0
 
-# Копирование исходных файлов проекта в контейнер
+# Установка Gradle
+RUN apt-get update && \
+    apt-get install -y wget unzip && \
+    wget https://services.gradle.org/distributions/gradle-7.6.1-bin.zip -P /tmp && \
+    unzip /tmp/gradle-7.6.1-bin.zip -d /opt && \
+    ln -s /opt/gradle-7.6.1/bin/gradle /usr/bin/gradle
+
+# Установка рабочей директории
 WORKDIR /app
+
+# Копирование исходных файлов проекта
 COPY ./Android .
+
 # Сборка проекта
 RUN gradle assembleDebug
